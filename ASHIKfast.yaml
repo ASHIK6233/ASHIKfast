@@ -1,0 +1,141 @@
+proxy-providers:
+  Ashik:
+    type: http
+    url: https://raw.githubusercontent.com/ASHIK6233/ASHIKfast/refs/heads/main/ServerList.txt
+    interval: 10
+    path: ./providers/Ashik.yaml
+
+proxy-groups:
+  - name: "All"
+    type: select
+    proxies:
+      - "Fastest Ashik"
+      - "CircleFTP"
+      - "Nagordola"
+      - "SamFTP"
+      - "ShowTime"
+      - "FtpBD"
+      - "IccFTP"
+      - "TimePassBD"
+      - "Discovery"
+      - "CloudTV"
+      - "EBox"
+      - "CtgHall"
+
+  - name: "Fastest Ashik"
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    use:
+      - Ashik
+
+  - name: CircleFTP
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    filter: "CircleFTP"
+    use:
+      - Ashik
+
+  - name: Nagordola
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    filter: "Nagordola"
+    use:
+      - Ashik
+
+  - name: SamFTP
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    filter: "SamFTP"
+    use:
+      - Ashik
+
+  - name: ShowTime
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    filter: "ShowTime"
+    use:
+      - Ashik
+
+  - name: FtpBD
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    filter: "FtpBD"
+    use:
+      - Ashik
+
+  - name: IccFTP
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    filter: "IccFTP"
+    use:
+      - Ashik
+
+  - name: TimePassBD
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    filter: "TimePassBD"
+    use:
+      - Ashik
+
+  - name: Discovery
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    filter: "Discovery"
+    use:
+      - Ashik
+
+  - name: CloudTV
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    filter: "CloudTV"
+    use:
+      - Ashik
+
+  - name: EBox
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    filter: "EBox"
+    use:
+      - Ashik
+
+  - name: CtgHall
+    type: load-balance
+    strategy: round-robin
+    url: http://1.1.1.1
+    interval: 10
+    filter: "CtgHall"
+    use:
+      - Ashik
+
+rules:
+  - DOMAIN-SUFFIX,www.facebook.net,DIRECT
+  - DOMAIN-SUFFIX,www.youtube.com,DIRECT
+  - DOMAIN-SUFFIX,www.google.com,DIRECT
+  - DOMAIN-SUFFIX,www.torrentbd.net,DIRECT
+  - DOMAIN-SUFFIX,www.fiverr.com,DIRECT
+  - DOMAIN-SUFFIX,www.upwork.com,DIRECT
+  - DOMAIN-SUFFIX,www.payoneer.com,DIRECT
+  - DOMAIN-SUFFIX,www.binance.com,DIRECT
+  - MATCH,All
