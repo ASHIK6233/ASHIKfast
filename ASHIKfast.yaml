@@ -1,7 +1,7 @@
 proxy-providers:
   Ashik:
     type: http
-    url: https://raw.githubusercontent.com/ASHIK6233/ASHIKfast/refs/heads/main/ServerList.txt
+    url: https://raw.githubusercontent.com/ASHIK6233/ASHIKServer/refs/heads/main/ServerList.txt
     interval: 10
     path: ./providers/Ashik.yaml
 
