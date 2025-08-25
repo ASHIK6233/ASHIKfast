@@ -130,6 +130,7 @@ proxy-groups:
       - Ashik
 
 rules:
+  - DOMAIN-SUFFIX,bkash.com,DIRECT
   - DOMAIN-SUFFIX,facebook.com,DIRECT
   - DOMAIN-SUFFIX,youtube.com,DIRECT
   - DOMAIN-SUFFIX,google.com,DIRECT
